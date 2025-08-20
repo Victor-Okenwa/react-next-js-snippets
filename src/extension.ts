@@ -5,6 +5,7 @@ import * as path from "path";
 import fs from "fs";
 import { getComponentNameFromPath, getContextNames } from "./workspace";
 import { pascalToCamelCase } from "./utils";
+
 export function activate(context: vscode.ExtensionContext) {
   // Load snippets from react-snippets.json
   const snippetsPath = path.join(
@@ -15,6 +16,20 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   const snippets = JSON.parse(fs.readFileSync(snippetsPath, "utf-8"));
+
+  function replaceLineSnippets(
+    line: string,
+    componentName: string,
+    names: { contextName: string; providerName: string; useHookName: string }
+  ) {
+    line = line.replace(/\${1:[^}]+}/g, componentName);
+    line = line.replace(/\${20:[^}]+}/g, pascalToCamelCase(componentName)); // Make placeholder pascal case to camel case
+    // Context-specific replacements like ccp/fcp
+    line = line.replace(/\${13:[^}]+}/g, names.contextName); // For context name
+    line = line.replace(/\${14:[^}]+}/g, names.providerName); // For provider name
+    line = line.replace(/\${15:[^}]+}/g, names.useHookName);
+    return line;
+  }
 
   const provider = vscode.languages.registerCompletionItemProvider(
     ["javascript", "javascriptreact", "typescript", "typescriptreact"],
@@ -43,15 +58,8 @@ export function activate(context: vscode.ExtensionContext) {
           // Replace placeholder names in the snippet body with the context-aware name
           let snippetBody = (snippet as { body: string[] }).body.map((line) => {
             // General component name replacement (for non-context snippets like rfc, nlayout)
-            line = line.replace(/\${1:[^}]+}/g, componentName);
-
-            line = line.replace(/\${20:[^}]+}/g, pascalToCamelCase(componentName)); // Make placeholder pascal case to camel case
-
-            // Context-specific replacements like ccp/fcp
-            line = line.replace(/\${13:[^}]+}/g, names.contextName); // For context name
-            line = line.replace(/\${14:[^}]+}/g, names.providerName); // For provider name
-            line = line.replace(/\${15:[^}]+}/g, names.useHookName); // For use hook name
-            return line;
+            // For use hook name
+            return replaceLineSnippets(line, componentName, names);
           });
 
           completionItem.insertText = new vscode.SnippetString(
@@ -73,63 +81,64 @@ export function activate(context: vscode.ExtensionContext) {
       },
     },
     ..."abcdefghijklmnopqrstuvwxyz".split("") // Trigger on any character to allow prefix matching
-
-    // new ReactSnippetProvider(),
-    // "r", // Trigger character - when user types 'r'
-    // "n"
   );
 
   const quickPicks = vscode.commands.registerCommand(
     "react-next-js-snippets.snippets",
     async function () {
-      vscode.window.showInformationMessage(`You just selected`);
-      const selected = await vscode.window.showQuickPick(
-        [
-          {
-            label: "React Functional Component",
-            description: "Insert a React functional component snippet",
-            detail: "Creates a React functional component",
-            insertText:
-              new vscode.SnippetString(`function \${1:ComponentName}() {
-      			return (
-      				<div>
-      					\${2:// Component content}
-      				</div>
-      			);
-      		}`),
-          },
-        ],
-        {
-          matchOnDetail: true,
+      const activeEditor = vscode.window.activeTextEditor;
+      if (!activeEditor) {
+        vscode.window.showErrorMessage("No active editor found.");
+        return;
+      }
+
+      const document = activeEditor.document;
+
+      // Get naming context from current document
+      const names = getContextNames(document);
+      const componentName = getComponentNameFromPath(document);
+
+      // Create quick pick items from snippets.json
+      const quickPickItems = Object.entries(snippets).map(
+        ([snippetName, snippet]: [string, any]) => {
+          return {
+            label: snippet.prefix,
+            description: snippet.description,
+            detail: snippet.description,
+            snippetData: snippet, // Store the snippet object for later use
+          };
         }
       );
 
+      const selected = await vscode.window.showQuickPick(quickPickItems, {
+        matchOnDetail: true,
+        placeHolder: "Select a React/Next.js snippet to insert",
+      });
+
       if (selected) {
-        vscode.window.showInformationMessage(
-          `You just selected ${selected.label}`
+        const snippet = selected.snippetData;
+
+        // Process the snippet body with replacements (same as completion provider)
+        let snippetBody = snippet.body.map((line: string) => {
+          // Replace placeholders with context-aware names
+          return replaceLineSnippets(line, componentName, names);
+        });
+
+        const insertText = new vscode.SnippetString(snippetBody.join("\n"));
+
+        // Insert the processed snippet
+        await activeEditor.insertSnippet(
+          insertText,
+          activeEditor.selection.active
         );
 
-        const { activeTextEditor } = vscode.window;
-        if (activeTextEditor) {
-          activeTextEditor.insertSnippet(
-            selected.insertText,
-            activeTextEditor.selection.active
-          );
-        }
-        console.log(selected);
+        // Trigger organize imports after insertion
+        await vscode.commands.executeCommand("editor.action.organizeImports");
       }
     }
   );
 
-  const helloWorld = vscode.commands.registerCommand(
-    "react-next-js-snippets.helloWorld",
-    async function () {
-      vscode.window.showInformationMessage(`Hello World`);
-      console.log(snippets);
-    }
-  );
-
-  context.subscriptions.push(provider, quickPicks, helloWorld);
+  context.subscriptions.push(provider, quickPicks);
 }
 
 // This method is called when your extension is deactivated

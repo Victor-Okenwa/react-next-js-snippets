@@ -22,11 +22,6 @@
         "command": "react-next-js-snippets.snippets",
         "title": "React Next Snippets",
         "category": "Snippets"
-      },
-      {
-        "command": "react-next-js-snippets.helloWorld",
-        "title": "Hello World",
-        "category": "Snippets"
       }
     ],
     "keybindings": [
