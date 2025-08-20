@@ -9,13 +9,32 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
+        "command": "react-next-js-snippets.snippets",
+        "title": "React Next Snippets",
+        "category": "Snippets"
+      },
+      {
         "command": "react-next-js-snippets.helloWorld",
-        "title": "Hello World"
+        "title": "Hello World",
+        "category": "Snippets"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "react-next-js-snippets.snippets",
+        "key": "ctrl+shift+l",
+        "when": "editorTextFocus",
+        "mac": "cmd+shift+l"
       }
     ]
   },

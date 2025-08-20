@@ -1,0 +1,1480 @@
+{
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "export function ${1:ComponentName} () {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a basic React Functional Component"
+  },
+  "React Functional Component with TypeScript": {
+    "prefix": "rfc-ts",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "",
+      "export function ${1:ComponentName}(props: ${1:ComponentName}Props) {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Creates a TypeScript React Functional Component"
+  },
+  "React Default Functional Component": {
+    "prefix": "rfc-de",
+    "body": [
+      "export default function ${1:ComponentName} () {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a basic React functional Component with default export "
+  },
+  "React Default Functional Component with TypeScript": {
+    "prefix": "rfc-ts-de",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "",
+      "export default function ${1:ComponentName}(props: ${1:ComponentName}Props) {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Creates a TypeScript React functional component with default export "
+  },
+
+  "React Async Functional Component": {
+    "prefix": "rfc-async",
+    "body": [
+      "export async function ${1:ComponentName} () {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Creates a basic React asynchronous functional component"
+  },
+  "React Async Functional Component with TypeScript": {
+    "prefix": "rfc-ts-async",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "",
+      "export async function ${1:ComponentName}(props: ${1:ComponentName}Props) {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Creates a TypeScript React functional asynchronous component"
+  },
+  "React Default Async Functional Component": {
+    "prefix": "rfc-de-async",
+    "body": [
+      "export default async function ${1:ComponentName} () {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Creates a basic React asynchronous functional component with default export"
+  },
+  "React Default Async Functional Component with TypeScript": {
+    "prefix": "rfc-ts-de-async",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "",
+      "export default async function ${1:ComponentName}(props: ${1:ComponentName}Props) {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Creates a TypeScript React asynchronous functional component with default export"
+  },
+
+  "React Arrow Functional Component": {
+    "prefix": "rfc-ar",
+    "body": [
+      "export const ${1:ComponentName} = ()=> {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a basic React Arrow Functional Component"
+  },
+  "React Arrow Functional Component with TypeScript": {
+    "prefix": "rfc-ts-ar",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "",
+      "export const ${1:ComponentName} = (props: ${1:ComponentName}Props)=> {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Creates a TypeScript React Arrow Functional Component"
+  },
+  "React Default Arrow Functional Component": {
+    "prefix": "rfc-ar-de",
+    "body": [
+      "export default ${1:ComponentName} = ()=> {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a basic React arrow functional component with default export"
+  },
+  "React Default Arrow Functional Component with TypeScript": {
+    "prefix": "rfc-ts-ar-de",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "",
+      "export default ${1:ComponentName} = (props: ${1:ComponentName}Props)=> {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Creates a TypeScript React arrow functional component with default export"
+  },
+
+  "React Asynchronous Arrow Functional Component": {
+    "prefix": "rfc-ar-async",
+    "body": [
+      "export const ${1:ComponentName} = async () => {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a basic React asynchronous arrow functional component"
+  },
+  "React Asynchronous Arrow Functional Component with TypeScript": {
+    "prefix": "rfc-ts-ar-async",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "",
+      "export const ${1:ComponentName} = async (props: ${1:ComponentName}Props)=> {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Creates a TypeScript React asynchronous arrow functional component"
+  },
+  "React Default Asynchronous Arrow Functional Component": {
+    "prefix": "rfc-ar-de-async",
+    "body": [
+      "export default ${1:ComponentName} = async ()=> {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a basic React asynchronous arrow functional component with default export"
+  },
+  "React Default Asynchronous Arrow Functional Component with TypeScript": {
+    "prefix": "rfc-ts-ar-de-async",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "",
+      "export default ${1:ComponentName} = async (props: ${1:ComponentName}Props)=> {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName}</h1>",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "Creates a TypeScript React asynchronous arrow functional component with default export"
+  },
+
+  "React useState Hook": {
+    "prefix": "rus",
+    "body": [
+      "import { useState } from 'react';",
+      "",
+      "const [${2:state}, ${3:setState}] = useState(initialValue);"
+    ],
+    "description": "Creates a React useState hook"
+  },
+  "React useEffect Hook": {
+    "prefix": "rue",
+    "body": [
+      "import { useEffect } from 'react';",
+      "",
+      "useEffect(() => {",
+      "// Effect code here",
+      "}, [${2:dependency}]);"
+    ],
+    "description": "Creates a React useEffect hook"
+  },
+
+  "Next.js Page Component": {
+    "prefix": "npage",
+    "body": [
+      "export default function ${1:PageName}() {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:PageName}</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a Next.js page component (page.jsx/page.tsx)"
+  },
+  "Next.js Page Arrow Functional Component": {
+    "prefix": "npage-arfc",
+    "body": [
+      "export default ${1:PageName} = ()=>  {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:PageName}</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a Next.js page arrow functional component (page.jsx/page.tsx)"
+  },
+
+  "Next.js Layout Component": {
+    "prefix": "nlayout",
+    "body": [
+      "export default function ${1:LayoutName} ({ children }) {",
+      "  return (",
+      "    <div>",
+      "      {children}",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a Next.js layout component (layout.jsx)"
+  },
+  "Next.js Typescript Layout Component": {
+    "prefix": "nlayout-tfc",
+    "body": [
+      "import { ReactNode } from 'react';",
+      "",
+      "interface ${1:LayoutName}Props {",
+      "  children: ReactNode;",
+      "}",
+      "",
+      "export default function ${1:LayoutName} ({ children }: ${1:LayoutName}Props) {",
+      "  return (",
+      "    <div>",
+      "      {children}",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a Next.js layout typescript component (layout.tsx)"
+  },
+
+  "Next.js Arrow Function Layout Component": {
+    "prefix": "nlayout-arfc",
+    "body": [
+      "export default ${1:LayoutName} = ({ children }) => {",
+      "  return (",
+      "    <div>",
+      "      {children}",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a Next.js layout arrow functional component (layout.jsx)"
+  },
+  "Next.js Typescript Arrow Function Layout Component": {
+    "prefix": "nlayout-tarfc",
+    "body": [
+      "import { ReactNode } from 'react';",
+      "",
+      "interface ${1:LayoutName}Props {",
+      "  children: ReactNode;",
+      "}",
+      "",
+      "export default ${1:LayoutName} = ({ children }: ${1:LayoutName}Props) => {",
+      "  return (",
+      "    <div>",
+      "      {children}",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a Next.js layout typescript arrow functional component (layout.tsx)"
+  },
+
+  "Next.js Dynamic Route Page": {
+    "prefix": "ndr-page",
+    "body": [
+      "import {useRouter} from 'next/router';",
+      "",
+      "export default function ${1:DynamicPageName} () {",
+      "// make sure to import useRouter from 'next/router'",
+      "  const router = useRouter();",
+      "  const { ${2:param} } = router.query;",
+      "",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:DynamicPageName}: {${2:param}}</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a Next.js dynamic route page ([param].jsx/[param].tsx)"
+  },
+  "Next.js Dynamic Arrow Functional Route Page": {
+    "prefix": "ndr-page-arfc",
+    "body": [
+      "import { useRouter } from 'next/router';",
+      "",
+      "export default ${1:DynamicPageName} = () => {",
+      "// make sure to import useRouter from 'next/router'",
+      "  const router = useRouter();",
+      "  const { ${2:param} } = router.query;",
+      "",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:DynamicPageName}: {${2:param}}</h1>",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Creates a Next.js dynamic route page ([param].jsx/[param].tsx)"
+  },
+
+  "Class Component": {
+    "prefix": "cc",
+    "body": [
+      "import { Component } from 'react';",
+      "",
+      "export class ${1:ComponentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        ${2}",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a basic React class component"
+  },
+  "Class Component Default Export": {
+    "prefix": "cc-de",
+    "body": [
+      "import { Component } from 'react';",
+      "",
+      "export default class ${1:ComponentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        ${2}",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a basic React class component with default export"
+  },
+
+  "Class Component With Constructor": {
+    "prefix": "ccc",
+    "body": [
+      "import { Component } from 'react';",
+      "",
+      "export class ${1:ComponentName} extends Component {",
+      "  constructor(props) {",
+      "    super(props);",
+      "    this.state = {",
+      "      ${2}",
+      "    };",
+      "  }",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        ${3}",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a React class component with a constructor"
+  },
+  "Class Component Default With Constructor": {
+    "prefix": "ccc-de",
+    "body": [
+      "import { Component } from 'react';",
+      "",
+      "export default class ${1:ComponentName} extends Component {",
+      "  constructor(props) {",
+      "    super(props);",
+      "    this.state = {",
+      "      ${2}",
+      "    };",
+      "  }",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        ${3}",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a React class component with a constructor with default export"
+  },
+  "Class Component Typescript With Constructor": {
+    "prefix": "ccc-ts",
+    "body": [
+      "import { Component } from 'react';",
+      "",
+      "interface ${1:ComponentName}Props {",
+      "// Define props here",
+      "}",
+      "export class ${1:ComponentName} extends Component {",
+      "  constructor(props: ${1:ComponentName}Props) {",
+      "    super(props);",
+      "    this.state = {",
+      "      ${2}",
+      "    };",
+      "  }",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        ${3}",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a React typescript class component with a constructor"
+  },
+  "Class Component Typescript Default With Constructor": {
+    "prefix": "ccc-ts-de",
+    "body": [
+      "import { Component } from 'react';",
+      "",
+      "interface ${1:ComponentName}Props {",
+      "// Define props here",
+      "}",
+      "export default class ${1:ComponentName} extends Component {",
+      "  constructor(props: ${1:ComponentName}Props) {",
+      "    super(props);",
+      "    this.state = {",
+      "      ${2}",
+      "    };",
+      "  }",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        ${3}",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a React typescript class component with a constructor with default export"
+  },
+
+  "Class Property Function": {
+    "prefix": "cpf",
+    "body": ["${1:functionName} () {", "  ${2}", "};"],
+    "description": "Creates a class property function"
+  },
+  "Class Property Arrow Function": {
+    "prefix": "cpf-ar",
+    "body": ["${1:functionName} = () => {", "  ${2}", "};"],
+    "description": "Creates a class property arrow function"
+  },
+
+  "Class Pure Component": {
+    "prefix": "cpc",
+    "body": [
+      "import { PureComponent } from 'react';",
+      "",
+      "export class ${1:ComponentName} extends PureComponent {",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        ${2}",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      ""
+    ],
+    "description": "Creates a React pure class component"
+  },
+  "Class Pure Default Component": {
+    "prefix": "cpc-de",
+    "body": [
+      "import { PureComponent } from 'react';",
+      "",
+      "export default class ${1:ComponentName} extends PureComponent {",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        ${2}",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      ""
+    ],
+    "description": "Creates a React pure class component with default export"
+  },
+
+  "Class Context Provider": {
+    "prefix": "ccp",
+    "body": [
+      "import React, { createContext, Component } from 'react';",
+      "",
+      "const ${13:BaseNameContext} = createContext(${14:defaultValue});",
+      "",
+      "export default class ${14:BaseNameProvider} extends Component {",
+      "  state = {",
+      "    ${1:// Add your initial state here}",
+      "  };",
+      "",
+      "  ${2:// Add your methods here}",
+      "",
+      "  render() {",
+      "    const value = {",
+      "      ...this.state,",
+      "      ${3:// Add methods to context value}",
+      "    };",
+      "",
+      "    return (",
+      "      <${13:BaseNameContext}.Provider value={value}>",
+      "        {this.props.children}",
+      "      </${13:BaseNameContext}.Provider>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export const ${15:useBaseName} = () => {",
+      "  const context = React.useContext(${13:BaseNameContext});",
+      "  if (!context) {",
+      "    throw new Error('${15:useBaseName} must be used within a ${14:BaseNameProvider}');",
+      "  }",
+      "  return context;",
+      "};"
+    ],
+    "description": "Creates a React class context provider with modern JavaScript practices"
+  },
+  "Class Context Provider with TypeScript": {
+    "prefix": "ccp-ts",
+    "body": [
+      "import { createContext, useState, Component, useContext, type ReactNode, type JSX } from 'react';",
+      "",
+      "interface ${13:BaseNameContext}Type {",
+      "  isLoading: boolean;",
+      "  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;",
+      "  // Define your state interface here",
+      "}",
+      "",
+      "interface ${14:BaseNameProvider}Props {",
+      "  children: ReactNode;",
+      "}",
+      "",
+      "const ${13:BaseNameContext} = createContext<${13:BaseNameContext}Type | undefined>(undefined);",
+      "",
+      "export default class ${14:BaseNameProvider} extends Component<${14:BaseNameProvider}Props, ${13:BaseNameContext}Type> {",
+      "  state: ${13:BaseNameContext}Type = {",
+      "    isLoading: false,",
+      "    setIsLoading: () => {},",
+      "    // Add your initial state here",
+      "  };",
+      "",
+      "  // Add your methods here",
+      "",
+      "  render(): ReactNode {",
+      "    const value: ${13:BaseNameContext}Type = {",
+      "      ...this.state,",
+      "      // Add methods to context value",
+      "    };",
+      "",
+      "    return (",
+      "      <${13:BaseNameContext}.Provider value={value}>",
+      "        {this.props.children}",
+      "      </${13:BaseNameContext}.Provider>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export const ${15:useBaseName} = (): ${13:BaseNameContext}Type => {",
+      "  const context = useContext(${13:BaseNameContext});",
+      "  if (!context) {",
+      "    throw new Error('${15:useBaseName} must be used within a ${14:BaseNameProvider}');",
+      "  }",
+      "  return context;",
+      "};"
+    ],
+    "description": "Creates a React class context provider with full TypeScript support"
+  },
+
+  "Functional Context Provider": {
+    "prefix": "fcp",
+    "body": [
+      "import React, { createContext, useState, useContext } from 'react';",
+      "",
+      "const ${13:BaseNameContext} = createContext(${14:defaultValue});",
+      "",
+      "export default function ${14:BaseNameProvider}({ children }) {",
+      "  const [${1:state}, ${2:setState}] = useState(${3:initialState});",
+      "",
+      "  ${4:// Add your custom functions here}",
+      "",
+      "  const value = {",
+      "    ${1:state},",
+      "    ${2:setState},",
+      "    ${5:// Add other values/functions to expose}",
+      "  };",
+      "",
+      "  return (",
+      "    <${13:BaseNameContext}.Provider value={value}>",
+      "      {children}",
+      "    </${13:BaseNameContext}.Provider>",
+      "  );",
+      "}",
+      "",
+      "export const ${15:useBaseName} = () => {",
+      "  const context = useContext(${13:BaseNameContext});",
+      "  if (!context) {",
+      "    throw new Error('${15:useBaseName} must be used within a ${14:BaseNameProvider}');",
+      "  }",
+      "  return context;",
+      "};"
+    ],
+    "description": "Creates a React functional context provider with modern JavaScript practices"
+  },
+  "Functional Context Provider with TypeScript": {
+    "prefix": "fcp-ts",
+    "body": [
+      "import { createContext, useState, useContext, type ReactNode, type JSX } from 'react';",
+      "",
+      "interface ${13:BaseNameContext}Type {",
+      "  isLoading: boolean;",
+      "  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;",
+      "  // Add other methods/values to context interface",
+      "}",
+      "",
+      "",
+      "interface ${14:BaseNameProvider}Props {",
+      "  children: ReactNode;",
+      "}",
+      "",
+      "const ${13:BaseNameContext} = createContext<${13:BaseNameContext}Type | undefined>(undefined);",
+      "",
+      "export default function ${14:BaseNameProvider}({ children }: ${14:BaseNameProvider}Props): JSX.Element {",
+      "  const [isLoading, setIsLoading] = useState<boolean>(false);",
+      "",
+      "  // Add your custom functions here",
+      "",
+      "  const value: ${13:BaseNameContext}Type = {",
+      "    isLoading,",
+      "    setIsLoading,",
+      "    // Add other values/functions to expose",
+      "  };",
+      "",
+      "  return (",
+      "    <${13:BaseNameContext}.Provider value={value}>",
+      "      {children}",
+      "    </${13:BaseNameContext}.Provider>",
+      "  );",
+      "}",
+      "",
+      "export const ${15:useBaseName} = (): ${13:BaseNameContext}Type => {",
+      "  const context = useContext(${13:BaseNameContext});",
+      "  if (!context) {",
+      "    throw new Error('${15:useBaseName} must be used within a ${14:BaseNameProvider}');",
+      "  }",
+      "  return context;",
+      "};"
+    ],
+    "description": "Creates a React functional context provider with full TypeScript support"
+  },
+
+  "Theme Provider Context": {
+    "prefix": "tcp",
+    "body": [
+      "'use client';",
+      "import { createContext, useContext, useEffect, useState } from 'react';",
+      "const initialState = { theme: 'system', setTheme: () => null };",
+      "",
+      "const ThemeProviderContext = createContext(initialState)",
+      "",
+      "export function ThemeProvider({ children, defaultTheme = 'system', storageKey = 'ui-theme', ...props }) {",
+      "const [theme, setTheme] = useState(() => {",
+      "if (typeof window === 'undefined') return defaultTheme",
+      "return localStorage.getItem(storageKey) || defaultTheme",
+      "});",
+      "",
+      "useEffect(() => {",
+      "const root = window.document.documentElement;",
+      "root.classList.remove('light', 'dark');",
+      "",
+      "if (theme === 'system') {",
+      "const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'",
+      "root.classList.add(systemTheme);",
+      "return;",
+      "}",
+      "root.classList.add(theme);",
+      "}, [theme]);",
+      "",
+      "const value = {",
+      "theme,",
+      "setTheme: (newTheme) => { localStorage.setItem(storageKey, newTheme) setTheme(newTheme) },",
+      "};",
+      "",
+      "return (",
+      "<ThemeProviderContext.Provider {...props} value={value}>",
+      "{children}",
+      "</ThemeProviderContext.Provider>",
+      ")};",
+      "",
+      "export const useTheme = () => {",
+      "const context = useContext(ThemeProviderContext);",
+      "if (context === undefined) {",
+      "throw new Error('useTheme must be used within a ThemeProvider')",
+      "}",
+      "",
+      "return context;",
+      "}",
+      ""
+    ],
+    "description": "Creates a theme context provider component"
+  },
+  "Theme Provider Context with TypeScript": {
+    "prefix": "tcp-ts",
+    "body": [
+      "'use client';",
+      "import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';",
+      "",
+      "type Theme = 'dark' | 'light' | 'system';",
+      "",
+      "interface ThemeProviderContextType {",
+      "  theme: Theme;",
+      "  setTheme: (theme: Theme) => void;",
+      "}",
+      "",
+      "interface ThemeProviderProps {",
+      "  children: ReactNode;",
+      "  defaultTheme?: Theme;",
+      "  storageKey?: string;",
+      "}",
+      "",
+      "const initialState: ThemeProviderContextType = {",
+      "  theme: 'system',",
+      "  setTheme: () => null,",
+      "};",
+      "",
+      "const ThemeProviderContext = createContext<ThemeProviderContextType>(initialState);",
+      "",
+      "export function ThemeProvider({",
+      "  children,",
+      "  defaultTheme = 'system',",
+      "  storageKey = 'ui-theme',",
+      "  ...props",
+      "}: ThemeProviderProps) {",
+      "  const [theme, setTheme] = useState<Theme>(() => {",
+      "    if (typeof window === 'undefined') return defaultTheme;",
+      "    return (localStorage.getItem(storageKey) as Theme) || defaultTheme;",
+      "  });",
+      "",
+      "  useEffect(() => {",
+      "    const root = window.document.documentElement;",
+      "    root.classList.remove('light', 'dark');",
+      "",
+      "    if (theme === 'system') {",
+      "      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches",
+      "        ? 'dark'",
+      "        : 'light';",
+      "      root.classList.add(systemTheme);",
+      "      return;",
+      "    }",
+      "",
+      "    root.classList.add(theme);",
+      "  }, [theme]);",
+      "",
+      "  const value: ThemeProviderContextType = {",
+      "    theme,",
+      "    setTheme: (newTheme: Theme) => {",
+      "      localStorage.setItem(storageKey, newTheme);",
+      "      setTheme(newTheme);",
+      "    },",
+      "  };",
+      "",
+      "  return (",
+      "    <ThemeProviderContext.Provider {...props} value={value}>",
+      "      {children}",
+      "    </ThemeProviderContext.Provider>",
+      "  );",
+      "}",
+      "",
+      "export const useTheme = (): ThemeProviderContextType => {",
+      "  const context = useContext(ThemeProviderContext);",
+      "",
+      "  if (context === undefined) {",
+      "    throw new Error('useTheme must be used within a ThemeProvider');",
+      "  }",
+      "",
+      "  return context;",
+      "};"
+    ],
+    "description": "Creates a theme context provider component with TypeScript support"
+  },
+
+  "Next Theme Provider": {
+    "prefix": "ntcp",
+    "body": [
+      "import { ThemeProvider as NextThemesProvider } from 'next-themes';",
+      "",
+      "export function ThemeProvider({ children, ...props }) {",
+      "return <NextThemesProvider {...props}>{children}</NextThemesProvider>;",
+      "};"
+    ],
+    "description": "Creates a Next.js theme context provider component"
+  },
+  "Next Theme Provider with TypeScript": {
+    "prefix": "ntcp-ts",
+    "body": [
+      "'use client'",
+      "",
+      "import * as React from 'react';",
+      "import { ThemeProvider as NextThemesProvider } from 'next-themes';",
+      "",
+      "export function ThemeProvider({ children, ...props }: React.ComponentProps<typeof NextThemesProvider>) {",
+      "return <NextThemesProvider {...props}>{children}</NextThemesProvider>;",
+      "};"
+    ],
+    "description": "Creates a Next.js theme context provider component with TypeScript support"
+  },
+
+  "Functional setState": {
+    "prefix": "ssf",
+    "body": [
+      "this.setState(prevState => ({",
+      "  ${1:key}: prevState.${1:key} ${2:+ 1}",
+      "}));"
+    ],
+    "description": "Creates a functional setState update"
+  },
+
+  "Higher Order Class Component": {
+    "prefix": "hocc",
+    "body": [
+      "import { Component } from 'react';",
+      "",
+      "export function ${20:HocName}(WrappedComponent) {",
+      "  return class ${1:hocName} extends Component {",
+      "    render() {",
+      "      return <WrappedComponent {...this.props} />;",
+      "    }",
+      "  };",
+      "}",
+      ""
+    ],
+    "description": "Creates a higher-order class component"
+  },
+  "Higher Order Class Component with Typescript": {
+    "prefix": "hocc-ts",
+    "body": [
+      "import { Component, type ComponentType } from 'react';",
+      "",
+      "export function ${20:HocName}(WrappedComponent: ComponentType) {",
+      "  return class ${1:hocName} extends Component {",
+      "    render() {",
+      "      return <WrappedComponent {...this.props} />;",
+      "    }",
+      "  };",
+      "}",
+      ""
+    ],
+    "description": "Creates a higher-order class component with Typescript support"
+  },
+  "Higher Order Functional Component": {
+    "prefix": "hofc",
+    "body": [
+      "export function ${20:hocName}(WrappedComponent) {",
+      "  return function ${1:HocName} (props) {",
+      "   return <WrappedComponent {...props} />;",
+      "  };",
+      "}",
+      ""
+    ],
+    "description": "Creates a higher-order functional component"
+  },
+  "Higher Order Functional Component with TypeScript": {
+    "prefix": "hofc-ts",
+    "body": [
+      "import { type ComponentType } from 'react';",
+      "",
+      "interface ${1:HocName}Props",
+      "export function ${20:hocName}(WrappedComponent: ComponentType) {",
+      "  return function ${1:HocName} (props: ${1:HocName}Props) {",
+      "   return <WrappedComponent {...props} />;",
+      "  };",
+      "}",
+      ""
+    ],
+    "description": "Creates a higher-order functional component with Typescript support"
+  },
+
+  "Import PropTypes": {
+    "prefix": "im-pt",
+    "body": ["import PropTypes from 'prop-types';"],
+    "description": "Import PropTypes"
+  },
+  "Import React": {
+    "prefix": "im-r",
+    "body": ["import React from 'react';"],
+    "description": "Import React"
+  },
+  "Import Component": {
+    "prefix": "im-c",
+    "body": ["import { Component } from 'react';"],
+    "description": "Import Component from React"
+  },
+  "Import PureComponent": {
+    "prefix": "im-pc",
+    "body": ["import { PureComponent } from 'react';"],
+    "description": "Imports Component and PureComponent from React"
+  },
+  "Import Component PureComponent": {
+    "prefix": "im-c-pc",
+    "body": ["import { Component, PureComponent } from 'react';"],
+    "description": "Import Component and PureComponent from React"
+  },
+  "Import useState": {
+    "prefix": "im-us",
+    "body": ["import { useState } from 'react';"],
+    "description": "Import useState"
+  },
+  "Import useEffect": {
+    "prefix": "imue",
+    "body": ["import { useEffect } from 'react';"],
+    "description": "Import useEffect"
+  },
+  "Import useRef": {
+    "prefix": "imur",
+    "body": ["import { useRef } from 'react';"],
+    "description": "Import useRef"
+  },
+  "Import useState useEffect": {
+    "prefix": "im-us-ue",
+    "body": ["import { useState, useEffect } from 'react';"],
+    "description": "Import useState, and useEffect"
+  },
+  "Import useState useRef": {
+    "prefix": "im-us-ur",
+    "body": ["import { useState, useRef } from 'react';"],
+    "description": "Import useState, and useRef"
+  },
+  "Import useEffect useRef": {
+    "prefix": "im-ue-ur",
+    "body": ["import { useEffect, useRef } from 'react';"],
+    "description": "Import useEffect, and useRef"
+  },
+  "Import ReactDOM": {
+    "prefix": "im-rd",
+    "body": ["import ReactDOM from 'react-dom';"],
+    "description": "Import ReactDOM"
+  },
+  "Import ReactDOM Client": {
+    "prefix": "im-rdc",
+    "body": ["import ReactDOM from 'react-dom/client';"],
+    "description": "Import ReactDOM Client"
+  },
+  "Render Prop": {
+    "prefix": "rprop",
+    "body": [
+      "export default class ${1:ComponentName} extends React.Component {",
+      "  render() {",
+      "    return this.props.render(${2:data});",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a render prop component"
+  },
+
+
+
+  "Stateless Arrow Function Component": {
+    "prefix": "sfc-ar",
+    "body": [
+      "export const ${1:ComponentName} = (props) => (",
+      "  <div>",
+      "    ${1:ComponentName}",
+      "  </div>",
+      ");",
+      ""
+    ],
+    "description": "Creates a stateless function component using an arrow function"
+  },
+  "Stateless Arrow Asynchronous Function Component": {
+    "prefix": "sfc-ar-async",
+    "body": [
+      "export const ${1:ComponentName} = async (props) => (",
+      "  <div>",
+      "    ${1:ComponentName}",
+      "  </div>",
+      ");",
+      ""
+    ],
+    "description": "Creates a stateless function component using an arrow function"
+  },
+  "Stateless Arrow Function Component with TypeScript": {
+    "prefix": "sfc-ts-ar",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "export const ${1:ComponentName} = (props: ${1:ComponentName}Props) => (",
+      "  <div>",
+      "    ${1:ComponentName}",
+      "  </div>",
+      ");",
+      ""
+    ],
+    "description": "Creates a stateless function component using an arrow function with TypeScript support"
+  },
+  "Stateless Arrow Asynchronous Function Component with TypeScript": {
+    "prefix": "sfc-ts-ar-async",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "export const ${1:ComponentName} = async (props: ${1:ComponentName}Props) => (",
+      "  <div>",
+      "    ${1:ComponentName}",
+      "  </div>",
+      ");",
+      ""
+    ],
+    "description": "Creates a stateless function component using an arrow function"
+  },
+  "Stateless Default Arrow Function Component": {
+    "prefix": "sfc-ar-de",
+    "body": [
+      "export default (props) => (",
+      "  <div>",
+      "    ${1:ComponentName}",
+      "  </div>",
+      ");",
+      ""
+    ],
+    "description": "Creates a stateless function component using an arrow function with default export"
+  },
+  "Stateless Default Arrow Asynchronous Function Component": {
+    "prefix": "sfc-ar-de-async",
+    "body": [
+      "export default async (props) => (",
+      "  <div>",
+      "    ${1:ComponentName}",
+      "  </div>",
+      ");",
+      ""
+    ],
+    "description": "Creates a stateless function component using an asynchronous arrow function with default export"
+  },
+  "Stateless Default Arrow Function with Typescript": {
+    "prefix": "sfc-ts-ar-de",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  // Define props here",
+      "}",
+      "export default (props: ${1:ComponentName}Props) => (",
+      "  <div>",
+      "    ${1:ComponentName}",
+      "  </div>",
+      ");",
+      ""
+    ],
+    "description": "Creates a stateless function component using an arrow function with default export and TypeScript support"
+  },
+  "Stateless Default Arrow Asynchronous Function Component with Typescript": {
+    "prefix": "sfc-ts-ar-de-async",
+    "body": [
+      "export default async (props) => (",
+      "  <div>",
+      "    ${1:ComponentName}",
+      "  </div>",
+      ");",
+      ""
+    ],
+    "description": "Creates a stateless function component using an asynchronous arrow function with default export and typescript support"
+  },
+
+  "componentDidCatch": {
+    "prefix": "cdc",
+    "body": ["componentDidCatch(error, info) {", "  ${1}", "}"],
+    "description": "Implements componentDidCatch lifecycle method"
+  },
+  "componentDidMount": {
+    "prefix": "cdm",
+    "body": ["componentDidMount() {", "  ${1}", "}"],
+    "description": "Implements componentDidMount lifecycle method"
+  },
+  "componentDidUpdate": {
+    "prefix": "cdu",
+    "body": ["componentDidUpdate(prevProps, prevState) {", "  ${1}", "}"],
+    "description": "Implements componentDidUpdate lifecycle method"
+  },
+  "componentWillMount": {
+    "prefix": "cwm",
+    "body": ["componentWillMount() {", "  ${1}", "}"],
+    "description": "Implements componentWillMount lifecycle method"
+  },
+  "componentWillReceiveProps": {
+    "prefix": "cwrp",
+    "body": ["componentWillReceiveProps(nextProps) {", "  ${1}", "}"],
+    "description": "Implements componentWillReceiveProps lifecycle method"
+  },
+  "componentWillUpdate": {
+    "prefix": "cwu",
+    "body": ["componentWillUpdate(nextProps, nextState) {", "  ${1}", "}"],
+    "description": "Implements componentWillUpdate lifecycle method"
+  },
+  "componentWillUnmount": {
+    "prefix": "cwun",
+    "body": ["componentWillUnmount() {", "  ${1}", "}"],
+    "description": "Implements componentWillUnmount lifecycle method"
+  },
+  "getDerivedStateFromProps": {
+    "prefix": "gds",
+    "body": [
+      "static getDerivedStateFromProps(nextProps, prevState) {",
+      "  ${1}",
+      "  return null;",
+      "}"
+    ],
+    "description": "Implements getDerivedStateFromProps static method"
+  },
+  "getSnapshotBeforeUpdate": {
+    "prefix": "gsbu",
+    "body": [
+      "getSnapshotBeforeUpdate(prevProps, prevState) {",
+      "  ${1}",
+      "  return null;",
+      "}"
+    ],
+    "description": "Implements getSnapshotBeforeUpdate lifecycle method"
+  },
+  "nextApi": {
+    "prefix": "napi",
+    "body": [
+      "import { NextApiRequest, NextApiResponse } from 'next';",
+      "",
+      "export default async function handler(req: NextApiRequest, res: NextApiResponse) {",
+      "  ${1}",
+      "}"
+    ],
+    "description": "Creates a Next.js API route handler"
+  },
+  "nextApp": {
+    "prefix": "napp",
+    "body": [
+      "import '../styles/globals.css';",
+      "import type { AppProps } from 'next/app';",
+      "",
+      "function MyApp({ Component, pageProps }: AppProps) {",
+      "  return <Component {...pageProps} />;",
+      "}",
+      "",
+      "export default MyApp;"
+    ],
+    "description": "Creates a Next.js custom App component"
+  },
+  "nextDocument": {
+    "prefix": "ndoc",
+    "body": [
+      "import Document, { Html, Head, Main, NextScript } from 'next/document';",
+      "",
+      "class MyDocument extends Document {",
+      "  render() {",
+      "    return (",
+      "      <Html>",
+      "        <Head />",
+      "        <body>",
+      "          <Main />",
+      "          <NextScript />",
+      "        </body>",
+      "      </Html>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default MyDocument;"
+    ],
+    "description": "Creates a Next.js custom Document component"
+  },
+  "nextImage": {
+    "prefix": "nimg",
+    "body": [
+      "import Image from 'next/image';",
+      "",
+      "<Image src=\"${1}\" alt=\"${2}\" width={${3:500}} height={${4:300}} />"
+    ],
+    "description": "Creates a Next.js Image component"
+  },
+  "nextInitialProps": {
+    "prefix": "nip",
+    "body": [
+      "${1:ComponentName}.getInitialProps = async (ctx) => {",
+      "  ${2}",
+      "  return { ${3:props} };",
+      "};"
+    ],
+    "description": "Implements getInitialProps for Next.js pages"
+  },
+  "nextMiddleware": {
+    "prefix": "nmid",
+    "body": [
+      "import { NextRequest, NextResponse } from 'next/server';",
+      "",
+      "export function middleware(req: NextRequest) {",
+      "  ${1}",
+      "  return NextResponse.next();",
+      "}"
+    ],
+    "description": "Creates a Next.js middleware function"
+  },
+  "nextPage": {
+    "prefix": "np",
+    "body": [
+      "import { NextPage } from 'next';",
+      "",
+      "const ${1:PageName}: NextPage = () => {",
+      "  return (",
+      "    <div>",
+      "      ${2}",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:PageName};"
+    ],
+    "description": "Creates a Next.js page component"
+  },
+  "nextPageServerSideProps": {
+    "prefix": "npssp",
+    "body": [
+      "import { NextPage } from 'next';",
+      "",
+      "const ${1:PageName}: NextPage = ({ ${2:props} }) => {",
+      "  return (",
+      "    <div>",
+      "      ${3}",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export async function getServerSideProps(context) {",
+      "  ${4}",
+      "  return { props: { ${5} } };",
+      "}",
+      "",
+      "export default ${1:PageName};"
+    ],
+    "description": "Creates a Next.js page with server-side props"
+  },
+  "nextPageStaticPaths": {
+    "prefix": "npspth",
+    "body": [
+      "import { NextPage } from 'next';",
+      "",
+      "const ${1:PageName}: NextPage = ({ ${2:props} }) => {",
+      "  return (",
+      "    <div>",
+      "      ${3}",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export async function getStaticPaths() {",
+      "  ${4}",
+      "  return { paths: ${5:[]}, fallback: false };",
+      "}",
+      "",
+      "export async function getStaticProps({ params }) {",
+      "  ${6}",
+      "  return { props: { ${7} } };",
+      "}",
+      "",
+      "export default ${1:PageName};"
+    ],
+    "description": "Creates a Next.js page with static paths and props"
+  },
+  "nextPageStaticProps": {
+    "prefix": "npsp",
+    "body": [
+      "import { NextPage } from 'next';",
+      "",
+      "const ${1:PageName}: NextPage = ({ ${2:props} }) => {",
+      "  return (",
+      "    <div>",
+      "      ${3}",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export async function getStaticProps() {",
+      "  ${4}",
+      "  return { props: { ${5} } };",
+      "}",
+      "",
+      "export default ${1:PageName};"
+    ],
+    "description": "Creates a Next.js page with static props"
+  },
+  "nextServerSideProps": {
+    "prefix": "nssp",
+    "body": [
+      "export async function getServerSideProps(context) {",
+      "  ${1}",
+      "  return { props: { ${2} } };",
+      "}"
+    ],
+    "description": "Defines server-side props for a Next.js page"
+  },
+  "nextStaticPaths": {
+    "prefix": "nspth",
+    "body": [
+      "export async function getStaticPaths() {",
+      "  ${1}",
+      "  return { paths: ${2:[]}, fallback: false };",
+      "}"
+    ],
+    "description": "Defines static paths for a Next.js page"
+  },
+  "nextStaticProps": {
+    "prefix": "nsp",
+    "body": [
+      "export async function getStaticProps() {",
+      "  ${1}",
+      "  return { props: { ${2} } };",
+      "}"
+    ],
+    "description": "Defines static props for a Next.js page"
+  },
+  "render": {
+    "prefix": "ren",
+    "body": [
+      "render() {",
+      "  return (",
+      "    <div>",
+      "      ${1}",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Implements the render method for a class component"
+  },
+  "setState": {
+    "prefix": "ss",
+    "body": ["this.setState({", "  ${1:key}: ${2:value}", "});"],
+    "description": "Sets state in a class component"
+  },
+  "shouldComponentUpdate": {
+    "prefix": "scu",
+    "body": [
+      "shouldComponentUpdate(nextProps, nextState) {",
+      "  ${1}",
+      "  return true;",
+      "}"
+    ],
+    "description": "Implements shouldComponentUpdate lifecycle method"
+  },
+  "useCallback Hook": {
+    "prefix": "ucb",
+    "body": [
+      "const ${1:memoizedCallback} = useCallback(() => {",
+      "  ${2}",
+      "}, [${3}]);"
+    ],
+    "description": "Creates a useCallback hook"
+  },
+  "useEffect Hook": {
+    "prefix": "uef",
+    "body": ["useEffect(() => {", "  ${1}", "}, [${2}]);"],
+    "description": "Creates a useEffect hook"
+  }
+}
