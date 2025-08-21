@@ -1,6 +1,6 @@
-# react-next-js-snippets README
+# react-next-js-smart-snippets README
 
-This is the README for your extension "react-next-js-snippets". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "react-next-js-smart-snippets". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 

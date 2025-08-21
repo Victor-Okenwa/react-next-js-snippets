@@ -84,7 +84,7 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   const quickPicks = vscode.commands.registerCommand(
-    "react-next-js-snippets.snippets",
+    "react-next-js-smart-snippets.snippets",
     async function () {
       const activeEditor = vscode.window.activeTextEditor;
       if (!activeEditor) {

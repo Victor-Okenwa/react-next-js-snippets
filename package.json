@@ -1,10 +1,10 @@
 {
-  "name": "react-next-js-snippets",
-  "displayName": "React Next.js Snippets",
-  "description": "Intelligent React/Next.js snippets with workspace awareness",
+  "name": "react-next-js-smart-snippets",
+  "displayName": "React Next.js Smart Snippets",
+  "description": "Intelligent React,Next.js, Typescript and JavaScript snippets with workspace and context awareness",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.103.0"
+    "vscode": "^1.10.5"
   },
   "categories": [
     "Other"
@@ -19,14 +19,14 @@
   "contributes": {
     "commands": [
       {
-        "command": "react-next-js-snippets.snippets",
+        "command": "react-next-js-smart-snippets.snippets",
         "title": "React Next Snippets",
         "category": "Snippets"
       }
     ],
     "keybindings": [
       {
-        "command": "react-next-js-snippets.snippets",
+        "command": "react-next-js-smart-snippets.snippets",
         "key": "ctrl+shift+l",
         "when": "editorTextFocus",
         "mac": "cmd+shift+l"
