@@ -1,10 +1,59 @@
 {
   "name": "react-next-js-smart-snippets",
   "displayName": "React Next.js Smart Snippets",
-  "description": "Intelligent React,Next.js, Typescript and JavaScript snippets with workspace and context awareness",
-  "version": "0.0.1",
+  "description": "Intelligent React, Next.js, Typescript and JavaScript snippets with workspace and context awareness",
+  "version": "1.0.0",
   "engines": {
-    "vscode": "^1.10.5"
+    "vscode": "^1.103.0"
+  },
+  "author": {
+    "name": "Victor Okenwa",
+    "email": "okenwavictor003@gmail.com"
+  },
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#1E90FF",
+    "theme": "dark"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vscode",
+    "snippets",
+    "react",
+    "nextjs", 
+    "typescript",
+    "javascript",
+    "smart snippets",
+    "intelligent snippets",
+    "react snippets",
+    "next.js snippets",
+    "typescript snippets",
+    "javascript snippets",
+    "react next.js snippets",
+    "react nextjs snippets",
+    "react nextjs smart snippets",
+    "react nextjs intelligent snippets",
+    "react nextjs code snippets",
+    "react nextjs code completion",
+    "react nextjs code generation",
+    "react nextjs code assistance",
+    "react nextjs code helper",
+    "react nextjs code tools",
+    "react nextjs code productivity",
+    "react nextjs code efficiency",
+    "react nextjs code quality",
+    "react nextjs code standards",
+    "react nextjs code best practices",
+    "react nextjs code optimization",
+    "react nextjs code refactoring",
+    "react nextjs code organization",
+    "react nextjs code structure",
+    "react nextjs code readability",
+    "react nextjs code maintainability"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Victor-Okenwa/react-next-js-snippets"
   },
   "categories": [
     "Other"
@@ -20,8 +69,13 @@
     "commands": [
       {
         "command": "react-next-js-smart-snippets.snippets",
-        "title": "React Next Snippets",
-        "category": "Snippets"
+        "title": "React Next Smart Snippets",
+        "category": "Smart Snippets"
+      },
+      {
+        "command": "react-next-js-smart-snippets.organizeAndFormatImports",
+        "title": "React Next Smart Snippets",
+        "category": "Smart Snippets"
       }
     ],
     "keybindings": [

@@ -7,6 +7,7 @@ import { getComponentNameFromPath, getContextNames } from "./workspace";
 import { pascalToCamelCase } from "./utils";
 
 export function activate(context: vscode.ExtensionContext) {
+  let lastDirective: string | null = null; // Track the last inserted directive
   // Load snippets from react-snippets.json
   const snippetsPath = path.join(
     context.extensionPath,
@@ -31,6 +32,16 @@ export function activate(context: vscode.ExtensionContext) {
     return line;
   }
 
+  const organizeAndFormat = vscode.commands.registerCommand(
+    "react-next-js-smart-snippets.organizeAndFormatImports",
+    async () => {
+      await vscode.commands.executeCommand("editor.action.organizeImports");
+      // Add a short delay for parsing
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      await vscode.commands.executeCommand("editor.action.formatDocument");
+    }
+  );
+
   const provider = vscode.languages.registerCompletionItemProvider(
     ["javascript", "javascriptreact", "typescript", "typescriptreact"],
     {
@@ -41,9 +52,6 @@ export function activate(context: vscode.ExtensionContext) {
         const names = getContextNames(document);
         const completionItems: vscode.CompletionItem[] = [];
         const componentName = getComponentNameFromPath(document);
-
-        console.log("Context Names:", names);
-        console.log("Component Name:", componentName);
 
         // Iterate through snippets and create completion items
         for (const [_snippetName, snippet] of Object.entries(snippets)) {
@@ -69,12 +77,20 @@ export function activate(context: vscode.ExtensionContext) {
             (snippet as { description: string }).description
           );
 
+          // // Set lastDirective based on the snippet prefix
+          // if ((snippet as { prefix: string }).prefix === "uclient") {
+          //   lastDirective = '"use client";';
+          // } else if ((snippet as { prefix: string }).prefix === "userver") {
+          //   lastDirective = '"use server";';
+          // }
+
           // Trigger 'Organize Imports' after snippet insertion to clean up duplicates
           // This runs automatically post-insert, merging duplicate imports (e.g., via ESLint rules)
           completionItem.command = {
-            command: "editor.action.organizeImports",
+            command: "react-next-js-smart-snippets.organizeAndFormatImports",
             title: "Organize Imports",
           };
+          // vscode.commands.executeCommand("editor.action.organizeImports");
           completionItems.push(completionItem);
         }
         return completionItems;
@@ -133,12 +149,92 @@ export function activate(context: vscode.ExtensionContext) {
         );
 
         // Trigger organize imports after insertion
-        await vscode.commands.executeCommand("editor.action.organizeImports");
+        await vscode.commands.executeCommand(
+          "react-next-js-smart-snippets.organizeAndFormatImports"
+        );
       }
     }
   );
 
-  context.subscriptions.push(provider, quickPicks);
+  // Listener to manage "use client" and "use server" directives on save
+  context.subscriptions.push(
+    vscode.workspace.onWillSaveTextDocument(async (event) => {
+      const document = event.document;
+      if (
+        document.languageId !== "typescriptreact" &&
+        document.languageId !== "javascriptreact"
+      ) {
+        return;
+      }
+
+      const text = document.getText();
+      const lines = text.split("\n");
+      let edits = new vscode.WorkspaceEdit();
+
+      // Check if line 1 contains a directive and replace it if necessary
+      if (lines.length > 0) {
+        const firstLine = lines[0].trim();
+        console.log("First line:", firstLine);
+        if (firstLine === '"use client";' || firstLine === '"use server";') {
+          console.log("Directive found at the top:", firstLine);
+          // Replace with the newly inserted directive based on snippet prefix
+          const newDirective = lines.some((line) =>
+            line.includes('"use server";')
+          )
+            ? '"use server";'
+            : '"use client";';
+
+            console.log("New directive to insert:", newDirective);
+
+          if (firstLine !== newDirective) {
+            const rangeToRemove = new vscode.Range(0, 0, 1, 0);
+            edits.delete(document.uri, rangeToRemove);
+            edits.insert(
+              document.uri,
+              new vscode.Position(0, 0),
+              newDirective + "\n"
+            );
+          }
+        } else {
+          // Insert the directive at the top if it exists anywhere else
+          const hasClient = lines.some((line) =>
+            line.includes('"use client";')
+          );
+          const hasServer = lines.some((line) =>
+            line.includes('"use server";')
+          );
+          if (hasClient || hasServer) {
+            const directiveToInsert = hasServer
+              ? '"use server";'
+              : '"use client";';
+            edits.insert(
+              document.uri,
+              new vscode.Position(0, 0),
+              directiveToInsert + "\n"
+            );
+
+            // Remove any existing directive from other lines
+            for (let i = 1; i < lines.length; i++) {
+              if (
+                lines[i].trim() === '"use client";' ||
+                lines[i].trim() === '"use server";'
+              ) {
+                const rangeToRemove = new vscode.Range(i, 0, i + 1, 0);
+                edits.delete(document.uri, rangeToRemove);
+              }
+            }
+          }
+        }
+      }
+
+      // Apply edits if any
+      if (edits.entries().length) {
+        await vscode.workspace.applyEdit(edits);
+      }
+    })
+  );
+
+  context.subscriptions.push(organizeAndFormat, provider, quickPicks);
 }
 
 // This method is called when your extension is deactivated

@@ -1111,6 +1111,19 @@
     "description": "Creates a higher-order functional component with Typescript support"
   },
 
+  "Import Server only": {
+    "prefix": "im-server-o",
+    "body": [
+      "import \"server-only\";",
+      ""
+    ],
+    "description": "Import server-only for Next.js or React Server Components"
+  },
+  "Import Next.js": {
+    "prefix": "im-n",
+    "body": ["import Next from \"next\";"],
+    "description": "Import Next.js"
+  },
   "Import PropTypes": {
     "prefix": "im-pt",
     "body": ["import PropTypes from \"prop-types\";"],
@@ -1142,12 +1155,12 @@
     "description": "Import useState"
   },
   "Import useEffect": {
-    "prefix": "imue",
+    "prefix": "im-ue",
     "body": ["import { useEffect } from \"react\";"],
     "description": "Import useEffect"
   },
   "Import useRef": {
-    "prefix": "imur",
+    "prefix": "im-ur",
     "body": ["import { useRef } from \"react\";"],
     "description": "Import useRef"
   },
@@ -1671,61 +1684,54 @@
   "useState Hook": {
     "prefix": "us",
     "body": [
-      "import { useState } from \"react\";",
-      "",
-      "const [${2:state}, ${3:setState}] = useState(initialValue);"
+      "const [${2:state}, ${3:setState}] = useState(initialValue);",
+      ""
     ],
     "description": "Creates a React useState hook"
   },
   "useEffect Hook": {
     "prefix": "uef",
     "body": [
-      "import { useEffect } from \"react\";",
-      "",
       "useEffect(() => {",
       "// Effect code here",
-      "}, [/* Dependencies */]);"
+      "}, [/* Dependencies */]);",
+      ""
     ],
     "description": "Creates a React useEffect hook"
   },
   "useCallback Hook": {
     "prefix": "ucb",
     "body": [
-      "import { useCallback } from \"react\";",
-      "",
       "const ${1:memoizedCallback} = useCallback(() => {",
       "  // Your logic here",
-      "}, [/* Dependencies */]);"
+      "}, [/* Dependencies */]);",
+      ""
     ],
     "description": "Creates a useCallback hook"
   },
   "useLayoutEffect Hook": {
     "prefix": "ulef",
     "body": [
-      "import { useLayoutEffect } from \"react\";",
-      "",
       "useLayoutEffect(() => {",
       "  // Your logic here",
-      "}, [/* Dependencies */]);"
+      "}, [/* Dependencies */]);",
+      ""
     ],
     "description": "Creates a useLayoutEffect hook"
   },
   "useMemo Hook": {
     "prefix": "ume",
     "body": [
-      "import { useMemo } from \"react\";",
-      "",
       "const ${1:memoizedValue} = useMemo(() => {",
       "  // Your logic here",
-      "}, [/* Dependencies */]);"
+      "}, [/* Dependencies */]);",
+      ""
     ],
     "description": "Creates a useMemo hook"
   },
   "useReducer Hook": {
     "prefix": "ure",
     "body": [
-      "import { useReducer } from \"react\";",
-      "",
       "const [state, dispatch] = useReducer(reducer, initialState);",
       ""
     ],
@@ -1734,10 +1740,25 @@
   "useRef Hook": {
     "prefix": "uref",
     "body": [
-      "import { useRef } from \"react\";",
-      "",
-      "const ${1:ref} = useRef(null);"
+      "const ${1:ref} = useRef(null);",
+      ""
     ],
     "description": "Creates a useRef hook"
+  },
+  "Use Client": {
+    "prefix": "uclient",
+    "body": [
+      "\"use client\";",
+      ""
+    ],
+    "description": "Creates a use client directive for Next.js or React Server Components"
+  },
+  "Use Server": {
+    "prefix": "userver",
+    "body": [
+      "\"use server\";",
+      ""
+    ],
+    "description": "Creates a use server directive for Next.js or React Server Components"
   }
 }
