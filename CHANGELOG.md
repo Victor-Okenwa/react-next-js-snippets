@@ -17,11 +17,7 @@ No fixes yet.
 
 ## 1.0.0 - 2025-08-21
 
-Added
-
-
-
-
+__Added__
 
 - Initial release of the React/Next.js Snippets extension.
 - Support for dynamic naming of components, contexts, and hooks based on file paths (e.g., app/user-context.tsx becomes UserContext).
@@ -39,5 +35,7 @@ Added
 ## Changed
 - Initial implementation of snippet replacement logic to handle dynamic naming in `extension.ts`.
 
+## 1.0.1 - 2025-08-21
+
 ## Fixed
-- Initial setup issues with snippet insertion and import organization.
+- Snippets source directory

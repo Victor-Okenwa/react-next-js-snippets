@@ -2,32 +2,51 @@ import * as vscode from "vscode";
 import * as path from "path";
 import { toPascalCase } from "./utils";
 
-
 // Extracts context-related names based on file and folder conventions
-export function getContextNames(document: vscode.TextDocument): { contextName: string, providerName: string, useHookName: string } {
+export function getContextNames(document: vscode.TextDocument): {
+  contextName: string;
+  providerName: string;
+  useHookName: string;
+} {
   const filePath = document.uri.fsPath;
   const workspaceRoot = getWorkspaceRoot();
   if (!workspaceRoot) {
-    return { contextName: 'ExampleContext', providerName: 'ExampleProvider', useHookName: 'useExample' };
+    return {
+      contextName: "ExampleContext",
+      providerName: "ExampleProvider",
+      useHookName: "useExample",
+    };
   }
 
   const relativePath = path.relative(workspaceRoot, filePath);
   const pathParts = relativePath.split(path.sep);
-  const fileName = path.basename(filePath, path.extname(filePath)).toLowerCase();
-  const parentFolder = pathParts[pathParts.length - 2] || '';
+  const fileName = path
+    .basename(filePath, path.extname(filePath))
+    .toLowerCase();
+  const parentFolder = pathParts[pathParts.length - 2] || "";
 
   let baseName = fileName;
 
   // Remove 'context' and 'provider' from file name to derive base name
-  baseName = baseName.replace(/context/gi, '').replace(/provider/gi, '').trim();
+  baseName = baseName
+    .replace(/context/gi, "")
+    .replace(/provider/gi, "")
+    .trim();
 
   // If no meaningful base name remains, use parent folder
   if (!baseName || baseName.length === 0) {
     baseName = parentFolder;
 
     // If folder name contains 'context' or 'provider', use fallback
-    if (parentFolder.toLowerCase().includes('context') || parentFolder.toLowerCase().includes('provider')) {
-      return { contextName: 'ProviderContext', providerName: 'ProviderName', useHookName: 'useExample' };
+    if (
+      parentFolder.toLowerCase().includes("context") ||
+      parentFolder.toLowerCase().includes("provider")
+    ) {
+      return {
+        contextName: "ProviderContext",
+        providerName: "ProviderName",
+        useHookName: "useExample",
+      };
     }
   }
 
@@ -61,7 +80,7 @@ export function getComponentNameFromPath(document: vscode.TextDocument) {
   // Get the relative path from workspace root
   const relativePath = path.relative(workspaceRoot, filePath);
   const pathParts = relativePath.split(path.sep);
-    // const fileName = path.basename(filePath, path.extname(filePath));
+  // const fileName = path.basename(filePath, path.extname(filePath));
 
   // For context provider snippets, return the context name as the primary placeholder
   const fileName = path
@@ -81,9 +100,15 @@ export function getComponentNameFromPath(document: vscode.TextDocument) {
       // Convert to Pascal case, handling kebab-case, snake_case, etc.
       parentFolder = toPascalCase(parentFolder);
       // Capitalize and append suffix based on file type
-      if (fileName === "page") return `${parentFolder}Page`;
-      if (fileName === "layout") return `${parentFolder}Layout`;
-      if (fileName === "route") return `${parentFolder}Route`; // Special handling for API routes
+      if (fileName === "page") {
+        return `${parentFolder}Page`;
+      }
+      if (fileName === "layout") {
+        return `${parentFolder}Layout`;
+      }
+      if (fileName === "route") {
+        return `${parentFolder}Route`;
+      } // Special handling for API routes
     }
   }
 

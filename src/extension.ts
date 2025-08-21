@@ -9,12 +9,9 @@ import { pascalToCamelCase } from "./utils";
 export function activate(context: vscode.ExtensionContext) {
   let lastDirective: string | null = null; // Track the last inserted directive
   // Load snippets from react-snippets.json
-  const snippetsPath = path.join(
-    context.extensionPath,
-    "src",
-    "snippets",
-    "snippets.json"
-  );
+  const snippetsPath = path.join(context.extensionPath, "snippets.json");
+
+  console.log(snippetsPath);
 
   const snippets = JSON.parse(fs.readFileSync(snippetsPath, "utf-8"));
 
@@ -184,7 +181,7 @@ export function activate(context: vscode.ExtensionContext) {
             ? '"use server";'
             : '"use client";';
 
-            console.log("New directive to insert:", newDirective);
+          console.log("New directive to insert:", newDirective);
 
           if (firstLine !== newDirective) {
             const rangeToRemove = new vscode.Range(0, 0, 1, 0);
