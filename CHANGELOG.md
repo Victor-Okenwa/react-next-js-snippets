@@ -39,3 +39,4 @@ __Added__
 
 ## Fixed
 - Snippets source directory
+- More Categories for better look up
