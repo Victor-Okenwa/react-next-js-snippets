@@ -15,7 +15,7 @@ No changes yet.
 ## Fixed
 No fixes yet.
 
-## 1.0.0 - 2025-08-21
+## 0.0.0 - 2025-08-21
 
 __Added__
 
@@ -35,8 +35,14 @@ __Added__
 ## Changed
 - Initial implementation of snippet replacement logic to handle dynamic naming in `extension.ts`.
 
-## 1.0.1 - 2025-08-21
+## 0.0.1 - 2025-08-21
 
 ## Fixed
 - Snippets source directory
 - More Categories for better look up
+  
+## 0.0.2 - 2025-08-23
+
+## Fixed
+- Better comments on theme provider context
+- Provide arrow function options for theme providers
