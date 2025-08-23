@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import * as path from "path";
-import { toPascalCase } from "./utils";
+import { reservedFiles, reservedFolders, toPascalCase } from "./utils";
 
 // Extracts context-related names based on file and folder conventions
 export function getContextNames(document: vscode.TextDocument): {
@@ -98,27 +98,39 @@ export function getComponentNameFromPath(document: vscode.TextDocument) {
     let parentFolder = pathParts[pathParts.length - 2];
     if (parentFolder) {
       // Convert to Pascal case, handling kebab-case, snake_case, etc.
-      parentFolder = toPascalCase(parentFolder);
+      // parentFolder = parentFolder !== "(...)" ? toPascalCase(parentFolder): "(...)";
       // Capitalize and append suffix based on file type
+
+
       if (fileName === "page") {
-        return `${parentFolder}Page`;
+        if (reservedFolders.includes(parentFolder.toLowerCase())) {
+          return "HomePage";
+        } else if (parentFolder === "(...)") {
+          return "GroupPage"
+        }
+        return toPascalCase(`${parentFolder}Page`);
       }
       if (fileName === "layout") {
-        return `${parentFolder}Layout`;
+        if (reservedFolders.includes(parentFolder.toLowerCase())) {
+          return "RootLayout";
+        } else if (parentFolder === "(...)") {
+          return "GroupLayout"
+        }
+        return toPascalCase(`${parentFolder}Layout`);
       }
       if (fileName === "route") {
-        return `${parentFolder}Route`;
+        if (reservedFolders.includes(parentFolder.toLowerCase())) {
+          return "RootRoute";
+        } else if (parentFolder === "(...)") {
+          return "GroupRoute"
+        }
+        return toPascalCase(`${parentFolder}Route`);
       } // Special handling for API routes
     }
   }
 
-  if (fileName === "index") {
-    // If the file is index.tsx, use the parent folder name
-    const parentFolder = pathParts[pathParts.length - 2];
-    if (parentFolder) {
-      return toPascalCase(parentFolder);
-    }
-  }
+  // if (reservedFiles.includes(fileName)) {
+  // }
 
   if (fileName.startsWith("api-")) {
     // For API routes, use the parent folder name or the file name without "api-"
@@ -168,5 +180,5 @@ export function getComponentNameFromPath(document: vscode.TextDocument) {
 
   // For non-Next.js files, use the file name or parent folder as fallback
   const parentFolder = pathParts[pathParts.length - 2] || fileName;
-  return toPascalCase(parentFolder);
+  return toPascalCase(fileName !== "index" ? fileName : parentFolder);
 }
