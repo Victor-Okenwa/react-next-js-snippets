@@ -46,3 +46,7 @@ __Added__
 ## Fixed
 - Better comments on theme provider context
 - Provide arrow function options for theme providers
+## 0.0.3 - 2025-08-23
+
+## Fixed
+- Better workspace IntelliSense quality for next and react components
