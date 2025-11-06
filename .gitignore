@@ -6,3 +6,5 @@ node_modules
 .history
 Todo.md
 dump.txt
+test.ts
+test.js

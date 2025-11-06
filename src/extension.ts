@@ -152,7 +152,7 @@ export function activate(context: vscode.ExtensionContext) {
       }
     }
   );
-
+  
   // Listener to manage "use client" and "use server" directives on save
   context.subscriptions.push(
     vscode.workspace.onWillSaveTextDocument(async (event) => {

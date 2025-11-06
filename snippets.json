@@ -1962,5 +1962,139 @@
     "prefix": "userver",
     "body": ["\"use server\";", ""],
     "description": "Creates a use server directive for Next.js or React Server Components"
+  },
+
+  "To Camel Case": {
+    "prefix": "tcc",
+    "body": [
+      "/**",
+      " * Converts a string of text (e.g., 'hello world', 'hello-world', 'hello_world') into camelCase.",
+      " * @param {string} text The input string to convert.",
+      " * @returns {string} The text in camelCase format (e.g., 'helloWorld').",
+      " */",
+      "export function toCamelCase (text) {",
+      "    if (!text) return \"\";",
+      "    return text.toLowerCase()",
+      "        .replace(/[^a-zA-Z0-9]+(.)/g, (_match, char) => char.toUpperCase());",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for converting text to camelCase"
+  },
+  "To Camel Case Typescript": {
+    "prefix": "tcc-ts",
+    "body": [
+      "/**",
+      " * Converts a string of text (e.g., 'hello world', 'hello-world', 'hello_world') into camelCase.",
+      " * @param {string} text The input string to convert.",
+      " * @returns {string} The text in camelCase format (e.g., 'helloWorld').",
+      " */",
+      "export function toCamelCase (text: string) {",
+      "    if (!text) return \"\";",
+      "    return text.toLowerCase()",
+      "        .replace(/[^a-zA-Z0-9]+(.)/g, (_match: string, char: string) => char.toUpperCase());",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for converting text to camelCase with typescript support"
+  },
+  "To Camel Case Arrow Function": {
+    "prefix": "tcc-ar",
+    "body": [
+      "/**",
+      " * Converts a string of text (e.g., 'hello world', 'hello-world', 'hello_world') into camelCase.",
+      " * @param {string} text The input string to convert.",
+      " * @returns {string} The text in camelCase format (e.g., 'helloWorld').",
+      " */",
+      "export const toCamelCase = (text) => {",
+      "    if (!text) return \"\";",
+      "    return text.toLowerCase()",
+      "        .replace(/[^a-zA-Z0-9]+(.)/g, (_match, char) => char.toUpperCase());",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for converting text to camelCase using arrow function"
+  },
+  "To Camel Case Typescript Arrow Function": {
+    "prefix": "tcc-ts-ar",
+    "body": [
+      "/**",
+      " * Converts a string of text (e.g., 'hello world', 'hello-world', 'hello_world') into camelCase.",
+      " * @param {string} text The input string to convert.",
+      " * @returns {string} The text in camelCase format (e.g., 'helloWorld').",
+      " */",
+      "export const toCamelCase = (text: string) => {",
+      "    if (!text) return \"\";",
+      "    return text.toLowerCase()",
+      "        .replace(/[^a-zA-Z0-9]+(.)/g, (_match: string, char: string) => char.toUpperCase());",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for converting text to camelCase using arrow function with typescript support"
+  },
+
+  "To Uppercase Case": {
+    "prefix": "tuc",
+    "body": [
+      "/**",
+      "  * Converts the entire input string to uppercase.",
+      "  * @param {string} text The input string to convert.",
+      "  * @returns {string} The text in uppercase format.",
+      " */",
+      "export function toUpperCase (text) {",
+      "    if (!text) return \"\";",
+      "    return text.toUpperCase();",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for converting text to uppercase"
+  },
+  "To Uppercase Case Typescript": {
+    "prefix": "tuc-ts",
+    "body": [
+      "/**",
+      "  * Converts the entire input string to uppercase.",
+      "  * @param {string} text The input string to convert.",
+      "  * @returns {string} The text in uppercase format.",
+      " */",
+      "export function toUpperCase (text: string) {",
+      "    if (!text) return \"\";",
+      "    return text.toUpperCase();",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for converting text to uppercase with typescript support"
+  },
+  "To Uppercase Case Arrow Function": {
+    "prefix": "tuc-ar",
+    "body": [
+      "/**",
+      "  * Converts the entire input string to uppercase.",
+      "  * @param {string} text The input string to convert.",
+      "  * @returns {string} The text in uppercase format.",
+      " */",
+      "export const toUpperCase = (text) => {",
+      "    if (!text) return \"\";",
+      "    return text.toUpperCase();",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for converting text to uppercase using arrow function"
+  },
+  "To Uppercase Case Typescript Arrow Function": {
+    "prefix": "tuc-ts-ar",
+    "body": [
+      "/**",
+      " * Converts the entire input string to uppercase.",
+      " * @param {string} text The input string to convert.",
+      " * @returns {string} The text in uppercase format.",
+      " */",
+      "export const toUpperCase = (text: string) => {",
+      "    if (!text) return \"\";",
+      "    return text.toUpperCase();",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for converting text to uppercase using arrow function with typescript support"
   }
 }

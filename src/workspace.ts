@@ -108,7 +108,7 @@ export function getComponentNameFromPath(document: vscode.TextDocument) {
         } else if (parentFolder === "(...)") {
           return "GroupPage";
         }
-        return toPascalCase(`${parentFolder}Page`);
+        return toPascalCase(parentFolder) + "Page";
       }
       if (fileName === "layout") {
         if (reservedFolders.includes(parentFolder.toLowerCase())) {
@@ -116,7 +116,7 @@ export function getComponentNameFromPath(document: vscode.TextDocument) {
         } else if (parentFolder === "(...)") {
           return "GroupLayout";
         }
-        return toPascalCase(`${parentFolder}Layout`);
+        return toPascalCase(parentFolder) + "Layout";
       }
       if (fileName === "route") {
         if (reservedFolders.includes(parentFolder.toLowerCase())) {
@@ -124,8 +124,8 @@ export function getComponentNameFromPath(document: vscode.TextDocument) {
         } else if (parentFolder === "(...)") {
           return "GroupRoute";
         }
-        return toPascalCase(`${parentFolder}Route`);
-      } // Special handling for API routes
+        return toPascalCase(parentFolder) + "Route";
+      }
     }
   }
 

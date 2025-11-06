@@ -2,7 +2,7 @@
   "name": "react-next-js-smart-snippets",
   "displayName": "React Next.js Smart Snippets",
   "description": "Intelligent React, Next.js, Typescript and JavaScript snippets with workspace and context awareness",
-  "version": "0.0.3",
+  "version": "1.0.4",
   "publisher": "morse-code",
   "engines": {
     "vscode": "^1.103.0"
@@ -13,7 +13,7 @@
   },
   "icon": "assets/icon.png",
   "galleryBanner": {
-    "color": "#1E90FF",
+    "color": "#1e1e1e",
     "theme": "dark"
   },
   "license": "MIT",
