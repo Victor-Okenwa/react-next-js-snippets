@@ -2135,35 +2135,39 @@
     "description": "Creates a utility function for converting text to sentence case with typescript support"
   },
   "To Sentence Case Arrow Function": {
-    "prefix": "tuc-ar",
+    "prefix": "tsc-ar",
     "body": [
       "/**",
-      "  * Converts the entire input string to uppercase.",
-      "  * @param {string} text The input string to convert.",
-      "  * @returns {string} The text in uppercase format.",
+      " * Converts a string to sentence case, capitalizing the first letter and making the rest lowercase.",
+      " * Note: This only capitalizes the *very first* letter of the whole string.",
+      " * @param {string} text The input string to convert.",
+      " * @returns {string} The text in sentence case format.",
       " */",
-      "export const toUpperCase = (text) => {",
-      "    if (!text) return \"\";",
-      "    return text.toUpperCase();",
+      "export const toSentenceCase = (text) => {",
+      "  if (!text) return \"\";",
+      "  const str = text.toLowerCase();",
+      "  return str.charAt(0).toUpperCase() + str.slice(1);",
       "}",
       ""
     ],
-    "description": "Creates a utility function for converting text to uppercase using arrow function"
+    "description": "Creates a utility function for converting text to sentence case using arrow function"
   },
   "To Sentence Case Typescript Arrow Function": {
-    "prefix": "tuc-ts-ar",
+    "prefix": "tsc-ts-ar",
     "body": [
       "/**",
-      " * Converts the entire input string to uppercase.",
+      " * Converts a string to sentence case, capitalizing the first letter and making the rest lowercase.",
+      " * Note: This only capitalizes the *very first* letter of the whole string..",
       " * @param {string} text The input string to convert.",
-      " * @returns {string} The text in uppercase format.",
+      " * @returns {string} The text in sentence case format.",
       " */",
       "export const toUpperCase = (text: string) => {",
-      "    if (!text) return \"\";",
-      "    return text.toUpperCase();",
+      "  if (!text) return \"\";",
+      "  const str = text.toLowerCase();",
+      "  return str.charAt(0).toUpperCase() + str.slice(1);",
       "}",
       ""
     ],
-    "description": "Creates a utility function for converting text to uppercase using arrow function with typescript support"
+    "description": "Creates a utility function for converting text to sentence case using arrow function with typescript support"
   }
 }
