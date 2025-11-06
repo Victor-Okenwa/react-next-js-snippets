@@ -2319,5 +2319,165 @@
       ""
     ],
     "description": "Creates a utility function for capitalizing each word using arrow function with typescript support"
+  },
+  "To Truncate Text": {
+    "prefix": "ttt",
+    "body": [
+      "/**",
+      " * Truncates a string to a specified length, adding an ellipsis if truncated.",
+      " * @param {string} text The input string to truncate.",
+      " * @param {number} maxLength The maximum length allowed before truncation.",
+      " * @returns {string} The truncated string.",
+      " */",
+      "export function truncateText (text, maxLength) {",
+      "    if (!text || text.length <= maxLength) {",
+      "      return text;",
+      "    }",
+      "    return text.substring(0, maxLength) + '...';",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for truncating text"
+  },
+  "To Truncate Text Typescript": {
+    "prefix": "ttt-ts",
+    "body": [
+      "/**",
+      " * Truncates a string to a specified length, adding an ellipsis if truncated.",
+      " * @param {string} text The input string to truncate.",
+      " * @param {number} maxLength The maximum length allowed before truncation.",
+      " * @returns {string} The truncated string.",
+      " */",
+      "export function truncateText (text: string, maxLength: number): string {",
+      "    if (!text || text.length <= maxLength) {",
+      "      return text;",
+      "    }",
+      "    return text.substring(0, maxLength) + '...';",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for truncating text with typescript support"
+  },
+  "To Truncate Text Arrow Function": {
+    "prefix": "ttt-ar",
+    "body": [
+      "/**",
+      " * Truncates a string to a specified length, adding an ellipsis if truncated.",
+      " * @param {string} text The input string to truncate.",
+      " * @param {number} maxLength The maximum length allowed before truncation.",
+      " * @returns {string} The truncated string.",
+      " */",
+      "export const truncateText = (text, maxLength) => {",
+      "    if (!text || text.length <= maxLength) {",
+      "      return text;",
+      "    }",
+      "    return text.substring(0, maxLength) + '...';",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for truncating text using arrow function"
+  },
+  "To Truncate Text Typescript Arrow Function": {
+    "prefix": "ttt-ts-ar",
+    "body": [
+      "/**",
+      " * Truncates a string to a specified length, adding an ellipsis if truncated.",
+      " * @param {string} text The input string to truncate.",
+      " * @param {number} maxLength The maximum length allowed before truncation.",
+      " * @returns {string} The truncated string.",
+      " */",
+      "export const truncateText = (text: string, maxLength: number): string => {",
+      "    if (!text || text.length <= maxLength) {",
+      "     return text;",
+      "    }",
+      "    return text.substring(0, maxLength) + '...';",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for truncating text using arrow function with typescript support"
+  },
+  "To Slugify Text": {
+    "prefix": "tst",
+    "body": [
+      "/**",
+      " * Converts text into a URL-friendly slug (lowercase, with words separated by hyphens, removing special characters).",
+      " * @param {string} text The input string to slugify.",
+      " * @returns {string} The slugified string (e.g., 'my-great-article').",
+      " */",
+      "export function slugify (text) {",
+      "    if (!text) return \"\";",
+      "    return text",
+      "        .toLowerCase()",
+      "        .trim()",
+      "        .replace(/[^a-z0-9\\s-]/g, '')",
+      "        .replace(/[\\s-]+/g, '-')",
+      "        .replace(/^-+|-+$/g, '');",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for slugifying text"
+  },
+  "To Slugify Text Typescript": {
+    "prefix": "tst-ts",
+    "body": [
+      "/**",
+      " * Converts text into a URL-friendly slug (lowercase, with words separated by hyphens, removing special characters).",
+      " * @param {string} text The input string to slugify.",
+      " * @returns {string} The slugified string (e.g., 'my-great-article').",
+      " */",
+      "export function slugify (text: string): string {",
+      "    if (!text) return \"\";",
+      "    return text",
+      "        .toLowerCase()",
+      "        .trim()",
+      "        .replace(/[^a-z0-9\\s-]/g, '')",
+      "        .replace(/[\\s-]+/g, '-')",
+      "        .replace(/^-+|-+$/g, '');",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for slugifying text with typescript support"
+  },
+  "To Slugify Text Arrow Function": {
+    "prefix": "tst-ar",
+    "body": [
+      "/**",
+      " * Converts text into a URL-friendly slug (lowercase, with words separated by hyphens, removing special characters).",
+      " * @param {string} text The input string to slugify.",
+      " * @returns {string} The slugified string (e.g., 'my-great-article').",
+      " */",
+      "export const slugify = (text) => {",
+      "    if (!text) return \"\";",
+      "    return text",
+      "        .toLowerCase()",
+      "        .trim()",
+      "        .replace(/[^a-z0-9\\s-]/g, '')",
+      "        .replace(/[\\s-]+/g, '-')",
+      "        .replace(/^-+|-+$/g, '');",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for slugifying text using arrow function"
+  },
+  "To Slugify Text Typescript Arrow Function": {
+    "prefix": "tst-ts-ar",
+    "body": [
+      "/**",
+      " * Converts text into a URL-friendly slug (lowercase, with words separated by hyphens, removing special characters).",
+      " * @param {string} text The input string to slugify.",
+      " * @returns {string} The slugified string (e.g., 'my-great-article').",
+      " */",
+      "export const slugify = (text: string): string => {",
+      "    if (!text) return \"\";",
+      "    return text",
+      "        .toLowerCase()",
+      "        .trim()",
+      "        .replace(/[^a-z0-9\\s-]/g, '')",
+      "        .replace(/[\\s-]+/g, '-')",
+      "        .replace(/^-+|-+$/g, '');",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function for slugifying text using arrow function with typescript support"
   }
 }
