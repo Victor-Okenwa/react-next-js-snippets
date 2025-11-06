@@ -2286,11 +2286,11 @@
     "prefix": "cew-ar",
     "body": [
       "/**",
-      " * Converts a string of text (e.g., 'hello world', 'hello-world') into PascalCase (capitalizing the first letter of every word).",
+      " * Capitalizes the first letter of every word in a string, leaving the rest of the letters as they were.",
       " * @param {string} text The input string to convert.",
-      " * @returns {string} The text in PascalCase format (e.g., 'HelloWorld').",
+      " * @returns {string} The text with the first letter of each word capitalized.",
       " */",
-      "export const toPascalCase = (text) => {",
+      "export const capitalizeEachWord = (text) => {",
       "    if (!text) return \"\";",
       "    return text",
       "     .split(\" \")",
@@ -2301,19 +2301,20 @@
     ],
     "description": "Creates a utility function for capitalizing each word using arrow function"
   },
-  "To Pascal Case Typescript Arrow Function": {
-    "prefix": "tpc-ts-ar",
+  "Capitalize Each Word Typescript Arrow Function": {
+    "prefix": "cew-ts-ar",
     "body": [
       "/**",
-      " * Converts a string of text (e.g., 'hello world', 'hello-world') into PascalCase (capitalizing the first letter of every word).",
+      " * Capitalizes the first letter of every word in a string, leaving the rest of the letters as they were.",
       " * @param {string} text The input string to convert.",
-      " * @returns {string} The text in PascalCase format (e.g., 'HelloWorld').",
+      " * @returns {string} The text with the first letter of each word capitalized.",
       " */",
       "export const toPascalCase = (text: string) => {",
       "    if (!text) return \"\";",
-      "    return text.split(/[\\s_-]+/)",
-      "        .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())",
-      "        .join(\"\");",
+      "    return text",
+      "     .split(\" \")",
+      "     .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))",
+      "     .join(\" \");",
       "}",
       ""
     ],
