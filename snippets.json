@@ -2479,5 +2479,84 @@
       ""
     ],
     "description": "Creates a utility function for slugifying text using arrow function with typescript support"
+  },
+
+  "Get Unique Array": {
+    "prefix": "una",
+    "body": [
+      "/**",
+      " * Creates a new array containing only the unique primitive values from the input array using the Set object.",
+      " * @param {Array<any>} array The input array containing potentially duplicate values.",
+      " * @returns {Array<any>} A new array with all duplicate values removed.",
+      " */",
+      "export function getUniqueArray (array) {",
+      "  if (!Array.isArray(array)) {",
+      "    console.error(\"Input must be an array.\");",
+      "    return [];",
+      "  }",
+      "  return [...new Set(array)];",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function to get unique array values"
+  },
+  "Get Unique Array Typescript": {
+    "prefix": "una-ts",
+    "body": [
+      "/**",
+      " * Creates a new array containing only the unique primitive values from the input array using the Set object.",
+      " * @param {Array<T>} array The input array containing potentially duplicate values.",
+      " * @returns {Array<T>} A new array with all duplicate values removed.",
+      " * @template T",
+      " */",
+      "export function getUniqueArray<T> (array: T[]): T[] {",
+      "  if (!Array.isArray(array)) {",
+      "    console.error(\"Input must be an array.\");",
+      "    return [];",
+      "  }",
+      "  return [...new Set(array)];",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function to get unique array values with typescript support"
+  },
+  "Get Unique Array Arrow Function": {
+    "prefix": "una-ar",
+    "body": [
+      "/**",
+      " * Creates a new array containing only the unique primitive values from the input array using the Set object.",
+      " * @param {Array<any>} array The input array containing potentially duplicate values.",
+      " * @returns {Array<any>} A new array with all duplicate values removed.",
+      " */",
+      "export const getUniqueArray = (array) => {",
+      "  if (!Array.isArray(array)) {",
+      "    console.error(\"Input must be an array.\");",
+      "    return [];",
+      "  }",
+      "  return [...new Set(array)];",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function to get unique array values using arrow function"
+  },
+  "Get Unique Array Typescript Arrow Function": {
+    "prefix": "una-ts-ar",
+    "body": [
+      "/**",
+      " * Creates a new array containing only the unique primitive values from the input array using the Set object.",
+      " * @param {Array<T>} array The input array containing potentially duplicate values.",
+      " * @returns {Array<T>} A new array with all duplicate values removed.",
+      " * @template T",
+      " */",
+      "export const getUniqueArray = <T> (array: T[]): T[] => {",
+      "  if (!Array.isArray(array)) {",
+      "    console.error(\"Input must be an array.\");",
+      "    return [];",
+      "  }",
+      "  return [...new Set(array)];",
+      "}",
+      ""
+    ],
+    "description": "Creates a utility function to get unique array values using arrow function with typescript support"
   }
 }
