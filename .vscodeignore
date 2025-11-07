@@ -16,3 +16,5 @@ dump.txt
 .history/**
 Todo.md
 vsc-extension-quickstart.md
+test.js
+test.ts

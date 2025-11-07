@@ -10,14 +10,16 @@ The format is based on Keep a Changelog, and this project adheres to semantic ve
 Initial preparation for future updates.
 
 ## Changed
+
 No changes yet.
 
 ## Fixed
+
 No fixes yet.
 
 ## 1.0.0 - 2025-08-21
 
-__Added__
+**Added**
 
 - Initial release of the React/Next.js Snippets extension.
 - Support for dynamic naming of components, contexts, and hooks based on file paths (e.g., app/user-context.tsx becomes UserContext).
@@ -33,26 +35,48 @@ __Added__
 - Logic to move `"use client"` and "use server" directives to the top of the file on save.
 
 ## Changed
+
 - Initial implementation of snippet replacement logic to handle dynamic naming in `extension.ts`.
 
 ## 1.0.1 - 2025-08-21
 
 ## Fixed
+
 - Snippets source directory
 - More Categories for better look up
-  
+
 ## 1.0.2 - 2025-08-23
 
 ## Fixed
+
 - Better comments on them provider context
 - Provide arrow function options for theme providers
-- 
+-
+
 ## 1.0.3 - 2025-08-23
 
 ## Fixed
+
 - Better workspace IntelliSense quality for next and react components
-- 
+-
+
 ## 1.0.4 - 2025-08-23
 
 ## Fixed
+
 - Fix Casing on page naming
+
+## 1.0.5 - 2025-11-7
+
+**Added**
+
+- New Extension Icon
+- Custom utility functions
+  - To camel case utility function (`tcc`, `tcc-ts`, `tcc-ar`, `tcc-ts-ar`)
+  - To uppercase utility function (`tuc`, `tuc-ts`, `tuc-ar`, `tuc-ts-ar`)
+  - To sentence case utility function (`tsc`, `tsc-ts`, `tsc-ar`, `tsc-ts-ar`)
+  - To pascal case utility function (`tpc`, `tpc-ts`, `tpc-ar`, `tpc-ts-ar`)
+  - Capitalize each word utility function (`cew`, `cew-ts`, `cew-ar`, `cew-ts-ar`)
+  - Slugify text utility function (`tst`, `tst-ts`, `tst-ar`, `tst-ts-ar`)
+  - Truncate text utility function (`ttt`, `ttt-ts`, `ttt-ar`, `ttt-ts-ar`)
+  - Get unique array utility function (`una`, `una-ts`, `una-ar`, `una-ts-ar`)
