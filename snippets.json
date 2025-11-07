@@ -2539,7 +2539,7 @@
     ],
     "description": "Creates a utility function to get unique array values using arrow function"
   },
-  "Get Unique Array Typescript Arrow Function": {
+"Get Unique Array Typescript Arrow Function": {
     "prefix": "una-ts-ar",
     "body": [
       "/**",
@@ -2548,7 +2548,7 @@
       " * @returns {Array<T>} A new array with all duplicate values removed.",
       " * @template T",
       " */",
-      "export const getUniqueArray = <T> (array: T[]): T[] => {",
+      "export const getUniqueArray = <T>(array: T[]): T[] => {",
       "  if (!Array.isArray(array)) {",
       "    console.error(\"Input must be an array.\");",
       "    return [];",
