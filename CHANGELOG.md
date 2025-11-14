@@ -80,3 +80,9 @@ No fixes yet.
   - Slugify text utility function (`tst`, `tst-ts`, `tst-ar`, `tst-ts-ar`)
   - Truncate text utility function (`ttt`, `ttt-ts`, `ttt-ar`, `ttt-ts-ar`)
   - Get unique array utility function (`una`, `una-ts`, `una-ar`, `una-ts-ar`)
+
+
+## 1.0.6 - 2025-11-14
+
+## Fixed
+- Added support for older vscode versions (1.6.0) to support cursor IDE

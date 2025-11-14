@@ -223,6 +223,11 @@ Add to VS Code settings (**settings.json**):
 
 - Added dynamic naming, import organization, and directive positioning.
 
+### 1.0.5
+
+- Added widely used utility functions (to camelcase, slugify text, truncate text e.t.c).
+  **!Check the change logs for more information.**
+
 ## Following extension guidelines
 
 Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.

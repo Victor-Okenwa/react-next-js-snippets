@@ -2,16 +2,16 @@
   "name": "react-next-js-smart-snippets",
   "displayName": "React Next.js Smart Snippets",
   "description": "Intelligent React, Next.js, Typescript and JavaScript snippets with workspace and context awareness",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "publisher": "morse-code",
   "engines": {
-    "vscode": "^1.103.0"
+    "vscode": "^1.60.0"
   },
   "author": {
     "name": "Victor Okenwa",
     "email": "okenwavictor003@gmail.com"
   },
-  "icon": "assets/icon.png",
+  "icon": "assets/icon.jpg",
   "galleryBanner": {
     "color": "#1e1e1e",
     "theme": "dark"
@@ -100,19 +100,21 @@
     "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "format": "prettier --write ."
   },
   "devDependencies": {
-    "@types/vscode": "^1.103.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
+    "@types/vscode": "^1.60.0",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",
-    "eslint": "^9.32.0",
-    "esbuild": "^0.25.8",
-    "npm-run-all": "^4.1.5",
-    "typescript": "^5.9.2",
     "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "esbuild": "^0.25.8",
+    "eslint": "^9.32.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
   }
 }

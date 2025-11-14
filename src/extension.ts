@@ -18,7 +18,11 @@ export function activate(context: vscode.ExtensionContext) {
   function replaceLineSnippets(
     line: string,
     componentName: string,
-    names: { contextName: string; providerName: string; useHookName: string }
+    names: {
+      contextName: string;
+      providerName: string;
+      useHookName: string;
+    },
   ) {
     line = line.replace(/\${1:[^}]+}/g, componentName);
     line = line.replace(/\${20:[^}]+}/g, pascalToCamelCase(componentName)); // Make placeholder pascal case to camel case
@@ -36,14 +40,14 @@ export function activate(context: vscode.ExtensionContext) {
       // Add a short delay for parsing
       await new Promise((resolve) => setTimeout(resolve, 300));
       await vscode.commands.executeCommand("editor.action.formatDocument");
-    }
+    },
   );
 
   const provider = vscode.languages.registerCompletionItemProvider(
     ["javascript", "javascriptreact", "typescript", "typescriptreact"],
     {
       provideCompletionItems(
-        document: vscode.TextDocument
+        document: vscode.TextDocument,
         // position: vscode.Position
       ) {
         const names = getContextNames(document);
@@ -54,7 +58,7 @@ export function activate(context: vscode.ExtensionContext) {
         for (const [_snippetName, snippet] of Object.entries(snippets)) {
           const completionItem = new vscode.CompletionItem(
             (snippet as { prefix: string }).prefix,
-            vscode.CompletionItemKind.Snippet
+            vscode.CompletionItemKind.Snippet,
           );
           completionItem.detail = (
             snippet as { description: string }
@@ -68,10 +72,10 @@ export function activate(context: vscode.ExtensionContext) {
           });
 
           completionItem.insertText = new vscode.SnippetString(
-            snippetBody.join("\n")
+            snippetBody.join("\n"),
           );
           completionItem.documentation = new vscode.MarkdownString(
-            (snippet as { description: string }).description
+            (snippet as { description: string }).description,
           );
 
           // // Set lastDirective based on the snippet prefix
@@ -93,7 +97,7 @@ export function activate(context: vscode.ExtensionContext) {
         return completionItems;
       },
     },
-    ..."abcdefghijklmnopqrstuvwxyz".split("") // Trigger on any character to allow prefix matching
+    ..."abcdefghijklmnopqrstuvwxyz".split(""), // Trigger on any character to allow prefix matching
   );
 
   const quickPicks = vscode.commands.registerCommand(
@@ -120,7 +124,7 @@ export function activate(context: vscode.ExtensionContext) {
             detail: snippet.description,
             snippetData: snippet, // Store the snippet object for later use
           };
-        }
+        },
       );
 
       const selected = await vscode.window.showQuickPick(quickPickItems, {
@@ -142,17 +146,17 @@ export function activate(context: vscode.ExtensionContext) {
         // Insert the processed snippet
         await activeEditor.insertSnippet(
           insertText,
-          activeEditor.selection.active
+          activeEditor.selection.active,
         );
 
         // Trigger organize imports after insertion
         await vscode.commands.executeCommand(
-          "react-next-js-smart-snippets.organizeAndFormatImports"
+          "react-next-js-smart-snippets.organizeAndFormatImports",
         );
       }
-    }
+    },
   );
-  
+
   // Listener to manage "use client" and "use server" directives on save
   context.subscriptions.push(
     vscode.workspace.onWillSaveTextDocument(async (event) => {
@@ -171,12 +175,10 @@ export function activate(context: vscode.ExtensionContext) {
       // Check if line 1 contains a directive and replace it if necessary
       if (lines.length > 0) {
         const firstLine = lines[0].trim();
-        console.log("First line:", firstLine);
         if (firstLine === '"use client";' || firstLine === '"use server";') {
-          console.log("Directive found at the top:", firstLine);
           // Replace with the newly inserted directive based on snippet prefix
           const newDirective = lines.some((line) =>
-            line.includes('"use server";')
+            line.includes('"use server";'),
           )
             ? '"use server";'
             : '"use client";';
@@ -189,16 +191,16 @@ export function activate(context: vscode.ExtensionContext) {
             edits.insert(
               document.uri,
               new vscode.Position(0, 0),
-              newDirective + "\n"
+              newDirective + "\n",
             );
           }
         } else {
           // Insert the directive at the top if it exists anywhere else
           const hasClient = lines.some((line) =>
-            line.includes('"use client";')
+            line.includes('"use client";'),
           );
           const hasServer = lines.some((line) =>
-            line.includes('"use server";')
+            line.includes('"use server";'),
           );
           if (hasClient || hasServer) {
             const directiveToInsert = hasServer
@@ -207,7 +209,7 @@ export function activate(context: vscode.ExtensionContext) {
             edits.insert(
               document.uri,
               new vscode.Position(0, 0),
-              directiveToInsert + "\n"
+              directiveToInsert + "\n",
             );
 
             // Remove any existing directive from other lines
@@ -228,7 +230,7 @@ export function activate(context: vscode.ExtensionContext) {
       if (edits.entries().length) {
         await vscode.workspace.applyEdit(edits);
       }
-    })
+    }),
   );
 
   context.subscriptions.push(organizeAndFormat, provider, quickPicks);

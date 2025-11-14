@@ -101,7 +101,6 @@ export function getComponentNameFromPath(document: vscode.TextDocument) {
       // parentFolder = parentFolder !== "(...)" ? toPascalCase(parentFolder): "(...)";
       // Capitalize and append suffix based on file type
 
-
       if (fileName === "page") {
         if (reservedFolders.includes(parentFolder.toLowerCase())) {
           return "HomePage";
